@@ -1,0 +1,170 @@
+---
+import BasicLayout from "./BasicLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  page?: "travel" | "blog";
+  slug?: string | undefined;
+  frontmatter?: {
+    file: string;
+    url: string | undefined;
+  } & {
+    title: string;
+    description: string;
+    pubDate: string;
+    minutesRead: string;
+  };
+}
+
+const { title, description, page, slug, frontmatter } = Astro.props;
+const image =
+  page === "travel"
+    ? `${Astro.url.origin}/globe_preview.webp`
+    : `${Astro.url.origin}/arjun.webp`;
+
+const schema =
+  page !== "blog"
+    ? {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        name: "Arjun",
+        url: "https://arjunghoshal.co",
+        sameAs: [
+          "https://www.linkedin.com/in/arjunghoshal/",
+          "https://github.com/Arjun4522",
+        ],
+        image: "https://arjunghoshal.co/arjun.webp",
+        jobTitle: "Cybersecurity Researcher",
+        worksFor: {
+          "@type": "IEMLabs",
+          name: "Internship",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "West Bengal",
+            addressCountry: "India",
+          },
+        },
+        nationality: {
+          "@type": "Country",
+          name: "India",
+        },
+      }
+    : {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://arjunghoshal.co//blog/${slug}`,
+        },
+        headline: frontmatter?.title || title,
+        description: frontmatter?.description || title,
+        image: "https://arjunghoshal.co/arjun.webp", //TODO: dynamic
+        author: {
+          "@type": "Person",
+          name: "Devansh",
+          url: "https://arjunghoshal.co/",
+          sameAs: [
+            "https://www.linkedin.com/in/devansh-kukreja",
+            "https://github.com/Arjun4522",
+          ],
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Devansh",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://arjunghoshal.co/arjun.webp",
+          },
+        },
+        datePublished: frontmatter?.pubDate || new Date().toISOString(),
+        dateModified: frontmatter?.pubDate || new Date().toISOString(),
+      };
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/arjun.webp" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <!-- Basic OG tags for sharing your website's content on platforms like Facebook and LinkedIn -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.origin} />
+    <meta
+      property="og:image"
+      content={image || "https://arjunghoshal.co/arjun.webp"}
+    />
+    <!-- Basic Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      name="twitter:image"
+      content={image || "https://arjunghoshal.co/arjun.webp"}
+    />
+
+    <link rel="preconnect" href="https://cdn.fontshare.com" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <div class="gradient-background">
+      <slot name="loader" />
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "CabinetGrotesk";
+    src: url("/fonts/CabinetGrotesk-Variable.ttf") format("truetype-variations");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 1000;
+  }
+  @font-face {
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi-Variable.ttf") format("truetype-variations");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 1000;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Satoshi", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .gradient-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff0000, #ffa500);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Cabinet Grotesk", sans-serif;
+  }
+
+  p {
+    font-family: "Satoshi";
+  }
+
+  b {
+    font-weight: 700 !important;
+  }
+</style>

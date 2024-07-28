@@ -1,0 +1,25 @@
+---
+import Card from "./Card/index.astro";
+import Pulse from "./Pulse.astro";
+import { LINKS } from "../lib/constants";
+import { Icon } from "astro-icon/components";
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
+  <div class="flex justify-between w-full items-start mb-2">
+    <div class="flex flex-col">
+<h1 class="text-white text-xl font-bold">Ongoing</h1>
+      <a class="text-xs text-gray-500 cursor-pointer">what's cooking?</a>
+  <p class="text-xs">
+    <a
+      href="https://fortress.tech"
+      class="text-primary-500 hover:text-primary-600">FORTRESS: Federated Operational Response and Threat Recognition Security System</a
+    > <br />Secure your enterprise networks with FORTRESS.
+  </p>
+  <p class="text-xs text-gray-500">
+    <em
+      >Out Soon!</em
+    
+  </p>
+
+</Card>
