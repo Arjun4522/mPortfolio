@@ -17,11 +17,10 @@ const { title, body, colSpan, rowSpan, href, colorText, height } = Astro.props;
 ---
 
 <div
-  class={`card h-max sm:h-auto group overflow-hidden transform-y-[-40%] bg-darkslate-500 shadow-lg rounded-lg p-6 border border-darkslate-100 hover:border-primary-500 align-start flex-none ${
-    height || "h-full"
-  } justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 ${
-    colSpan || "md:col-span-2"
-  } ${rowSpan || ""}`}
+  class={`card group overflow-hidden shadow-lg rounded-lg p-6 align-start flex-none ${height || "h-full"} justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 ${colSpan || "md:col-span-2"} ${rowSpan || ""}`}
+  style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease;"
+  onmouseover="this.style.transform = 'translateY(-10px)'"
+  onmouseout="this.style.transform = 'translateY(0)'"
 >
   {
     href ? (
