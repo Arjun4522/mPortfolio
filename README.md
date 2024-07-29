@@ -1,5 +1,5 @@
 
-## A personal portfolio website made using `Astro`.
+## My Portfolio.
 
 
-inspired by [Gianmarco](https://ladvace.medium.com/)
+
