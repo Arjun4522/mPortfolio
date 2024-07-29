@@ -20,24 +20,21 @@ const projects = await getProjects();
   title="Arjun Ghoshal - Projects"
   description="Cybersecurity and AI practitioner with a strong focus on Network Security, DevSecOps, and vulnerability research."
 >
-  <main
-    class="w-screen h-screen flex flex-col justify-start items-start max-w-3xl mx-auto p-8"
-  >
-    <a
-      href="/"
-      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 mb-8 border-1 border-solid border-neutral-600 rounded-lg"
-      >Back</a
-    >
-    <h1 class="text-4xl font-bold mb-4 text-neutral-100">projects :)</h1>
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-      {projects.map((project) => <Project {project} />)}
+  <main class="w-screen h-screen flex flex-col justify-start items-start max-w-6xl mx-auto p-8 relative">
+    <h1 class="text-4xl font-bold mb-4 text-neutral-100">Projects</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <Project project={project} />
+      ))}
     </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <p class="text-lg text-neutral-200 mb-6">
+    <p class="text-lg text-neutral-200 mt-8">
       And many more....
     </p>
+    <a
+      href="/"
+      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 border-1 border-solid border-neutral-600 rounded-lg absolute top-8 right-9"
+    >
+      Back
+    </a>
   </main>
 </Layout>

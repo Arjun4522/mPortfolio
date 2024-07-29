@@ -25,12 +25,12 @@ export async function getProjects(): Promise<Project[]> {
 
     {
       repo: "First Light",
-      link: "Non-disclosable for ethical reasons",
+      link: "https://github.com/Arjun4522/FirstLight7",
       description: "First Light is a sophisticated personnel surveillance and intelligence tool designed to track, monitor, and log activities on any Android device. Key features include live screen capturing, media extraction, WhatsApp message logging, and location tracking, among others.",
     },
     {
       repo: "Lazarus.ai",
-      link: "Non-disclosable due to company policy",
+      link: "https://github.com/Arjun4522/Lazarus.ai",
       description: "Lazarus.ai is an advanced MLSecOps platform designed for seamless integration with any ML model deployment workflow. It meticulously scans for potential bugs and security vulnerabilities at every stage of the CI/CD pipeline. Equipped with an intuitive in-built chat UI, Lazarus.ai enhances the vulnerability management process, ensuring it is both comprehensive and reliable.",
     },
     {
