@@ -21,7 +21,7 @@ const { title, description, page, slug, frontmatter } = Astro.props;
 const image =
   page === "travel"
     ? `${Astro.url.origin}/globe_preview.webp`
-    : `${Astro.url.origin}/prev.webp`;
+    : `${Astro.url.origin}/arjun.webp`;
 
 const schema =
   page !== "blog"
@@ -34,7 +34,7 @@ const schema =
           "https://www.linkedin.com/in/arjunghoshal/",
           "https://github.com/Arjun4522",
         ],
-        image: "https://arjunghoshal.co/prev.webp",
+        image: "https://arjunghoshal.co/arjun.webp",
         jobTitle: "Cybersecurity Researcher",
         worksFor: {
           "@type": "IEMLabs",
@@ -59,7 +59,7 @@ const schema =
         },
         headline: frontmatter?.title || title,
         description: frontmatter?.description || title,
-        image: "https://arjunghoshal.co/prev.webp", //TODO: dynamic
+        image: "https://arjunghoshal.co/arjun.webp", //TODO: dynamic
         author: {
           "@type": "Person",
           name: "Arjun",
@@ -74,7 +74,7 @@ const schema =
           name: "Arjun",
           logo: {
             "@type": "ImageObject",
-            url: "https://arjunghoshal.co/prev.webp",
+            url: "https://arjunghoshal.co/arjun.webp",
           },
         },
         datePublished: frontmatter?.pubDate || new Date().toISOString(),
@@ -87,7 +87,7 @@ const schema =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/prev.webp" />
+    <link rel="icon" type="image/x-icon" href="/arjun.webp" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -99,7 +99,7 @@ const schema =
     <meta property="og:url" content={Astro.url.origin} />
     <meta
       property="og:image"
-      content={image || "https://arjunghoshal.co/prev.webp"}
+      content={image || "https://arjunghoshal.co/arjun.webp"}
     />
     <!-- Basic Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -107,7 +107,7 @@ const schema =
     <meta name="twitter:description" content={description} />
     <meta
       name="twitter:image"
-      content={image || "https://arjunghoshal.co/prev.webp"}
+      content={image || "https://arjunghoshal.co/arjun.webp"}
     />
 
     <link rel="preconnect" href="https://cdn.fontshare.com" />
@@ -153,7 +153,7 @@ const schema =
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #ff0000, #ffa500);
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
   }
 
   h1, h2, h3, h4, h5, h6 {
