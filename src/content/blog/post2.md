@@ -10,7 +10,7 @@ category: "intro"
 
 # **Told you Work in progess!**
 
-This Markdown file creates a page at `devanshkukreja.co/post1/`
+This Markdown file creates a page at `ArjunGhoshal.co/post1/`
 
 It probably isn't styled much, but Markdown does support:
 
