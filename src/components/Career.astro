@@ -1,0 +1,16 @@
+---
+import Card from "./Card/index.astro";
+---
+
+<Card colSpan="lg:col-span-2" rowSpan="md:row-span-2" title="Work Experience" class="custom-card">
+  <div class="flex flex-col gap-1"> 
+    <p class="text-sm font-light">
+With over 2 years in cybersecurity, I have led projects in network and application security, collaborated with law enforcement on OSINT initiatives, and researched DDoS prevention using machine learning. I currently specialize in open-source security research, continuously advancing my expertise.
+  </div>
+</Card>
+
+<style>
+  .custom-card {
+    --card-title-margin-bottom: 0.5rem; /* Adjust this value to control space below the title */
+  }
+</style>

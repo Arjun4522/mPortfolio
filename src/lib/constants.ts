@@ -3,7 +3,7 @@ export const LINKS = {
   linkedin: "https://www.linkedin.com/in/arjunghoshal/",
   medium: "https://medium.com/@ghosalarjun",
   twitter: "https://x.com/arjun4522",
-  Resume: "https://docs.google.com/document/d/1U4cWgiSrSXPIdqooHVxFDwUWewvwnKKdeAuXM6q5wIE/edit?usp=sharing"
+  Resume: "https://drive.google.com/file/d/16UHB9HekyS5xVP6eZsofZVIV9u-SHNlt/view?usp=sharing"
 };
 
 export const loaderAnimation = [
